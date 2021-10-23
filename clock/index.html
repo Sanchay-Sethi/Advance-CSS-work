@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Javascript Clock UI Dark</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="dark">
+		<button>Light</button>
+	</div>
+	<div class="light">
+		<button>Dark</button>
+	</div>
+	<div class="clock">
+		<div class="hour">
+			<div class="hr" id="hr"></div>
+		</div>
+		<div class="min">
+			<div class="mn" id="mn"></div>
+		</div>
+		<div class="sec">
+			<div class="sc" id="sc"></div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		const deg = 6;
+		const hr = document.querySelector("#hr");
+		const mn = document.querySelector("#mn");
+		const sc = document.querySelector("#sc");
+		setInterval(() => {
+			let day = new Date();
+			let hh = day.getHours() * 30;
+			let mm = day.getMinutes() * deg;
+			let ss = day.getSeconds() * deg;
+			hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
+			mn.style.transform = `rotateZ(${mm}deg)`;
+			sc.style.transform = `rotateZ(${ss}deg)`;
+		})
+
+		const darkbtn = document.querySelector(".dark").onclick = function fun(){
+			document.body.style.background = '#dfe6ff';
+			document.body.style.transition = '1s';
+			document.querySelector('.dark').style.display = 'none';
+			document.querySelector('.light').style.display = 'block';
+			document.querySelector('.clock').style.background = '#fff url(clock2.png)';
+			document.querySelector('.clock').style.transition = '1.5s';
+			document.querySelector('.clock').style.backgroundSize = 'cover';
+			document.querySelector('.clock').style.border= '4px solid #e3f6ff';
+
+		}
+		const lightbtn = document.querySelector(".light").onclick = function fun(){
+			document.body.style.background = '#091921';
+			document.body.style.transition = '1s';
+			document.querySelector('.dark').style.display = 'block';
+			document.querySelector('.light').style.display = 'none';
+			document.querySelector('.clock').style.background = '#091921 url(clock.png)';
+			document.querySelector('.clock').style.transition = '1.5s';
+			document.querySelector('.clock').style.backgroundSize = 'cover';
+			document.querySelector('.clock').style.border= '4px solid #091921';
+		}
+
+	</script>
+</body>
+</html>
+
+

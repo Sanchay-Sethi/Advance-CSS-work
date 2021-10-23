@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-page</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-image: url("https://images.unsplash.com/photo-1615828942223-49ba42142e82?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60");
+        }
+
+        .log {
+            margin: 100px auto;
+            border: 2px solid black;
+            background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+            padding: 20px;
+            width: 30%;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        button {
+            width: 40%;
+            background: linear-gradient(to right, grey, white);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="log">
+ 
+            <form onsubmit="login(event)" id = "form">
+                <h1>Log in here</h1>
+                <label for="uname">Username : </label>
+                <input type=" text" name="username" id="uname" required><br>
+                <br>
+                <label for="upass">Password :</label>
+                <input type="password" name="password" id="upass" required><br>
+                <br>
+                <input type="submit" value = "Login">
+                <button>Reset</button>
+           </form>
+    
+    </div>
+    <script>
+        function login(e) {
+            e.preventDefault();
+            let uname=document.getElementById("uname").value;
+            let pass=document.getElementById("upass").value;
+            if(uname=="sanchay" && pass=="sethi"){
+                location.assign("Home_page.html");
+            }
+            else{
+                window.alert("Wrong Password!!");
+            }
+        }
+    </script>
+</body>
+
+</html>

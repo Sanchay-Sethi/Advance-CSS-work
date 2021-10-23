@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    
+    min-height: 100vh;
+    background-color: black;
+}
+.container{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    animation: animate 4s linear infinite;
+}
+@keyframes animate{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+.row{
+    display: inline-flex;
+    margin-top: -32px;
+    margin-left: -50px;
+}
+.row:nth-child(even){
+    margin-left: 21px;
+}
+.hexagon{
+    position: relative;
+    width: 140px;
+    height: 130px;
+    background: #111;
+    margin: 1px;
+    margin-top: 13px;
+    transform: rotate(90deg);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    transition: 2s;
+}
+.hexagon:hover{
+    transition: 0s;
+    background: #0f0;
+    
+}
+.hexagon:after{
+
+    content: '';
+    position: absolute;
+    top:4px;
+    bottom: 4px;
+    left: 4px;
+    right: 4px;
+    background: #111;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    z-index: 1;
+}
+.hexagon:before{
+    content: '';
+    position: absolute;
+    top: -35px;
+    left: 35px;
+    width: 50%;
+    height: 100%;
+    pointer-events: none;
+    background: rgba(255, 255, 255,0.02);
+    transform: rotate(90deg);
+    z-index: 1000;
+}

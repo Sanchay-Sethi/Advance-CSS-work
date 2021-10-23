@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>My Portfolio</title>
+  </head>
+  <body>
+    <section id="main">
+      <div>
+        <h2>
+          My name is Sanchay Sethi, Full stack Web Developer. You can refer my
+          CV attached below. You can hire me. I am open for the job either full
+          time or part time. I am app developer too and my three apps are
+          currently working well on google playstore.
+        </h2>
+      </div>
+      <div>
+        <h1>Sanchay Sethi</h1>
+        <h2>
+          My name is Sanchay Sethi, Full stack Web Developer. You can refer my
+          CV attached below. You can hire me. I am open for the job either full
+          time or part time. I am app developer too and my three apps are
+          currently working well on google playstore.
+        </h2>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="content">
+        <h2>My Skills reveal</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+          sapiente quia, sequi vitae reiciendis modi. Ullam officiis
+          accusantium, veritatis quasi optio neque recusandae, explicabo dicta
+          sequi saepe quod atque odio in quia minima molestias! Aspernatur vitae
+          blanditiis obcaecati sint laboriosam a, tempore facere eum quos
+          voluptate cum, libero dignissimos perspiciatis?
+        </p>
+      </div>
+      
+    </section>
+
+    <!-- <div id="cursor"></div>
+    <script type="text/javascript">
+      var cursor = document.getElementById("cursor");
+      window.onmousemove = function (e) {
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+      };
+    </script> -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.3.0/lib/p5.js"></script>
+    <script>
+
+      function setup() {
+        createCanvas(windowWidth, windowHeight);
+      }
+      function draw() {
+          strokeWeight(50);
+          if(mouseIsPressed == true){
+              line(mouseX,mouseY,pmouseX,pmouseY)
+          }
+      }
+    </script>
+  </body>
+</html>
